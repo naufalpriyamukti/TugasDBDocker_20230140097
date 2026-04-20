@@ -1,6 +1,7 @@
 package com.example.praktikum7kedua.controller;
 
 import com.example.praktikum7kedua.model.User;
+import com.example.praktikum7kedua.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,6 +40,6 @@ public class UserController {
     @PutMapping("/{id}")
     public String updateUser(PathVariable String id, @RequestBody User request) {
         userService.updateUser(id, request);
-        return "user update successfuly"
+        return "user update successfuly";
     }
 }
