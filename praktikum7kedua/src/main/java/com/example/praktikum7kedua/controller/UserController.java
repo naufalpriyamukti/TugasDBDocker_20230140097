@@ -1,9 +1,7 @@
 package com.example.praktikum7kedua.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.praktikum7kedua.model.User;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/users")
@@ -18,5 +16,10 @@ public class UserController {
     public String createUser(@RequestBody User request) {
         userService.addUser(request);
         return "user created successfuly";
+    }
+
+    @GetMapping
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
     }
 }
