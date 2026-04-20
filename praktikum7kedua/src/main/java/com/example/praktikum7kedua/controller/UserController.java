@@ -3,6 +3,8 @@ package com.example.praktikum7kedua.controller;
 import com.example.praktikum7kedua.model.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/users")
 public class UserController {
@@ -27,5 +29,10 @@ public class UserController {
     public String deleteUser (@PathVariable String id) {
         userService.deleteUser(id);
         return "User deleted succesfull";
+    }
+
+    @GetMapping("/{id}")
+    public User getUserById(PathVariable String id) {
+        return userService.getUserById(id);
     }
 }
